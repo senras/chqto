@@ -9,8 +9,8 @@
       <% if false %>
       <li><%= link_to 'Show link', link_path(id:@link.id), :class => 'navbar-link'  %></li>
       <li><%= link_to 'Edit link', edit_link_path(id:@link.id), :class => 'navbar-link'  %></li>
-      <li><%= link_to 'New link', new_link_path, :class => 'navbar-link'  %></li>   
       <% end %>
+      <li><%= link_to 'New link', new_link_path, :class => 'navbar-link'  %></li>   
     <% else %>
       <li><%= link_to 'Sign In', new_user_session_path, :class => 'navbar-link'  %></li>
       <li><%= link_to 'Sign Up', new_user_registration_path, :class => 'navbar-link'  %></li>
