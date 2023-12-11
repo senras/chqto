@@ -7,7 +7,7 @@
       <%# User dropdown logged in %>
       <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="bi bi-person-circle"> <%= current_user.email %></i>
+        <i class="bi bi-person-circle"> <%= current_user.username %></i>
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
         <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'dropdown-item'  %></li>
