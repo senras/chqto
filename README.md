@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# Problemas a resolver:
+
+ - Dropdown de Profile no pude hacerlo funcionar. Problemas con Bootstrap + Turbo por lo que averigué.
