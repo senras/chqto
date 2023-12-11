@@ -2,7 +2,6 @@
   <% if link.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(link.errors.count, "error") %> prohibited this link from being saved:</h2>
-
       <ul>
         <% link.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -11,32 +10,59 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="form-group">
+      <%= form.label :link_type %>
+      <%= form.select :link_type, Link.link_types.keys, {}, {:class => 'form-control'} %>
   </div>
 
-  <div>
-    <%= form.label :slug, style: "display: block" %>
-    <%= form.text_field :slug %>
+   <div class="form-group">
+    <%= form.label :name do %>
+      <%= "Name (optional)" %>
+    <% end %>
+    <%= form.text_field :name, :class => "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group">
+    <%= form.label :url %>
+    <%= form.text_field :url, class: 'form-control' %>
+  </div>
+
+  <div class="form-group" id="temporary" style="display:none">
     <%= form.label :expiration_date, style: "display: block" %>
-    <%= form.date_field :expiration_date %>
+    <%= form.date_field :expiration_date, :class => "form-control" %>
   </div>
 
-  <div>
+  <div class="form-group" id="private" style="display:none">
     <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
+    <%= form.password_field :password, :class => "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :accessed, style: "display: block" %>
-    <%= form.check_box :accessed %>
+  <div class="my-3">
+      <%= form.submit link.persisted? ? "Update Link" : "Create Link", class: "btn btn-success" %>
   </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var linkType = document.getElementById("link_link_type");
+        var linkPassword = document.getElementById("private");
+        var linkExpirationDate = document.getElementById("temporary");    
+
+        linkType.addEventListener("change", function() {
+          var type = linkType.value;
+          // console.log(type);
+          if (type === "private") {
+            linkPassword.style.display = "block";
+            linkExpirationDate.style.display = "none";
+          } else if (type === "temporary") {
+            linkPassword.style.display = "none";
+            linkExpirationDate.style.display = "block";
+          } else {
+            linkPassword.style.display = "none";
+            linkExpirationDate.style.display = "none";
+          }
+        });     
+    });
+  </script>
 <% end %>
+
+
