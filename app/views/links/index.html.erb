@@ -1,14 +1,35 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Links</h1>
-
-<div id="links">
-  <% @links.each do |link| %>
-    <%= render link %>
-    <p>
-      <%= link_to "Show this link", link %>
-    </p>
-  <% end %>
+<div class="w-100 container">
+  <div>
+      <h2>Links</h2>
+      <%= link_to "New link", new_link_path, class: "btn btn-success my-2" %> 
+  </div>
+  <table class="table table-hover">
+    <thead>
+      <tr class="table-secondary">
+        <th>Original URL</th>
+        <th>Category</th>
+        <th>Shortened URL</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @links.each do |link| %>
+        <tr>
+          <td><%= link.url %></td>
+          <td><%= link.link_type %></td>
+          <td><%= link.slug %></td>
+          <td>
+            <%= link_to "Show", link, class: "btn btn-primary btn-sm mr-1" %>
+            <%= button_to "Destroy", link, method: :delete, class: "btn btn-danger btn-sm", onclick: "return confirm('Are you sure?');", form_class: "d-inline" %>
+            <%= link_to "Edit", edit_link_path(link), class: "btn btn-warning btn-sm mr-1" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="text-center">
+    <%= will_paginate @link, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div> 
 </div>
 
-<%= link_to "New link", new_link_path %>
+
