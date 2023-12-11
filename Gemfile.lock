@@ -77,13 +77,21 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
+    attr_encrypted (4.0.0)
+      encryptor (~> 3.0.0)
+    autoprefixer-rails (10.4.16.0)
+      execjs (~> 2)
     base64 (0.2.0)
     bcrypt (3.1.20)
     bigdecimal (3.1.4)
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
+    bootstrap (5.3.2)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.11.8, < 3)
     builder (3.2.4)
+    cancancan (3.5.0)
     capybara (3.39.2)
       addressable
       matrix
@@ -108,8 +116,13 @@ GEM
       warden (~> 1.2.3)
     drb (2.2.0)
       ruby2_keywords
+    encryptor (3.0.0)
     erubi (1.12.0)
+    execjs (2.9.1)
+    ffi (1.16.3)
     globalid (1.2.1)
+      activesupport (>= 6.1)
+    groupdate (6.4.0)
       activesupport (>= 6.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
@@ -151,6 +164,7 @@ GEM
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
+    popper_js (2.11.8)
     psych (5.1.1.1)
       stringio
     public_suffix (5.0.4)
@@ -195,6 +209,10 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rake (13.1.0)
+    ransack (4.1.1)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.6.1)
       psych (>= 4.0.0)
     regexp_parser (2.8.3)
@@ -206,6 +224,14 @@ GEM
     rexml (3.2.6)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.15.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
@@ -222,6 +248,7 @@ GEM
       railties (>= 6.0.0)
     stringio (3.1.0)
     thor (1.3.0)
+    tilt (2.3.0)
     timeout (0.4.1)
     turbo-rails (1.5.0)
       actionpack (>= 6.0.0)
@@ -241,6 +268,9 @@ GEM
     websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    will_paginate (3.3.1)
+    will_paginate-bootstrap4 (0.2.2)
+      will_paginate (~> 3.0, >= 3.0.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
     zeitwerk (2.6.12)
@@ -249,14 +279,21 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  attr_encrypted
+  bcrypt (~> 3.1.7)
   bootsnap
+  bootstrap (~> 5.3.2)
+  cancancan (~> 3.4)
   capybara
   debug
   devise (~> 4.9, >= 4.9.3)
+  groupdate (~> 6.4)
   importmap-rails
   jbuilder
   puma (>= 5.0)
   rails (~> 7.1.2)
+  ransack (~> 4.1, >= 4.1.1)
+  sassc-rails (~> 2.1, >= 2.1.2)
   selenium-webdriver
   sprockets-rails
   sqlite3 (~> 1.4)
@@ -264,6 +301,8 @@ DEPENDENCIES
   turbo-rails
   tzinfo-data
   web-console
+  will_paginate (~> 3.3, >= 3.3.1)
+  will_paginate-bootstrap4 (~> 0.2.2)
 
 RUBY VERSION
    ruby 3.2.2p53

@@ -35,7 +35,7 @@ gem "jbuilder"
 # gem "kredis"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+gem "bcrypt", "~> 3.1.7"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i[ windows jruby ]
@@ -67,3 +67,23 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+# Use for authentication
+gem 'attr_encrypted'
+
+# Use for pagination
+gem 'will_paginate', '~> 3.3', '>= 3.3.1'
+gem 'will_paginate-bootstrap4', '~> 0.2.2'
+
+# Use for date grouping
+gem 'groupdate', '~> 6.4'
+
+# Use for authorization
+gem 'cancancan', '~> 3.4'
+
+# Use for search
+gem 'ransack', '~> 4.1', '>= 4.1.1'
+
+gem 'bootstrap', '~> 5.3.2'
+
+gem 'sassc-rails', '~> 2.1', '>= 2.1.2'
