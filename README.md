@@ -1,6 +1,6 @@
-# chqto TTPS-Ruby 2023 - Senra Ignacio
+# TTPS-Ruby 2023 - Senra Ignacio - chqto 
 
-## Requeriments 
+## Requisitos 
     Ruby version: 3.2.2
     Rails version: 7.1.2
 
@@ -18,9 +18,11 @@ Una vez descargado el proyecto:
 ### Desplegar app:
     $rails server
 
+Queda el server desplegado en: http://127.0.0.1:3000/
+
 ### Credenciales users pre-cargados:
-    email: 'mailuser1@gmail.com', password: '123456'
-    email: 'mailuser2@gmail.com', password: '123456'
+    email: mailuser1@gmail.com, password: 123456
+    email: mailuser2@gmail.com, password: 123456
 
 
 ## Librerías y gemas utilizadas:
@@ -41,8 +43,8 @@ Una vez descargado el proyecto:
 
  - Dropdown de Profile no pude hacerlo funcionar. Problemas con Bootstrap + Turbo por lo que averigué.
 
- - Vistas de estadísticas.
-
  - Corregir vista de Link.
+
+ - Vistas de estadísticas.
 
  - Controladores de estadísticas.
