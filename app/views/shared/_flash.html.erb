@@ -1,0 +1,22 @@
+<%# Generate flash alert and notice messages with SweetAlert2 %>
+<% if notice %>
+  <script>
+     Swal.fire({ 
+       icon: 'success', 
+       title: '<%= notice %>', 
+       showConfirmButton: false, 
+       timer: 1500 
+     }) 
+   </script> 
+ <% end %> 
+ <% if alert %> 
+   <script> 
+     Swal.fire({ 
+       icon: 'error', 
+       title: '<%= alert %>', 
+       showConfirmButton: false, 
+       timer: 1500 
+     }) 
+   </script> 
+<% end %>
+
