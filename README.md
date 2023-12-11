@@ -1,29 +1,48 @@
-# README
+# chqto TTPS-Ruby 2023 - Senra Ignacio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requeriments 
+    Ruby version: 3.2.2
+    Rails version: 7.1.2
 
-Things you may want to cover:
+## Instrucciones para deployment local:
 
-* Ruby version
+Una vez descargado el proyecto:
 
-* System dependencies
+### instalar dependencias:
+    bundler install
 
-* Configuration
+### Generar BD con datos pre-cargados del seeds:
+    $rails db:migrate
+    $rails db:seed
 
-* Database creation
+### Desplegar app:
+    $rails server
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Credenciales users pre-cargados:
+    email: 'mailuser1@gmail.com', password: '123456'
+    email: 'mailuser2@gmail.com', password: '123456'
 
 
-# Problemas a resolver:
+## Librerías y gemas utilizadas:
+ - SweetAlert2      para flash messages (cdn)
+ - Bootstrap 5      para estilos
+ - Bootstrap Icons  
+ - sassc-rails      para Sass en Rails (dependencia  bootstrap)
+ - Will_paginate    para paginado de listas de elementos
+ - groupdate        para agrupar por dates
+ - ransack          para búsqueda
+
+ - attr_encrypted   para autenticación
+ - Cancancan        para autorización
+ - Bcrypt           para cifrado de contraseñas
+
+
+## Pendientes:
 
  - Dropdown de Profile no pude hacerlo funcionar. Problemas con Bootstrap + Turbo por lo que averigué.
+
+ - Vistas de estadísticas.
+
+ - Corregir vista de Link.
+
+ - Controladores de estadísticas.
