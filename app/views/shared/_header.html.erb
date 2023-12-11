@@ -1,20 +1,25 @@
 <nav>
   <ul>
     <li><%= link_to 'Home', root_path, :class => 'navbar-link'  %></li>
+    <li><%= link_to 'About', about_path, :class => 'navbar-link'  %></li>
     <% if user_signed_in? %>
       <li><%= link_to 'Links', links_path, :class => 'navbar-link'  %></li>
-      <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'navbar-link'  %></li>
-      <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, :class => 'navbar-link' %>
-      </li>
-      <% if false %>
-      <li><%= link_to 'Show link', link_path(id:@link.id), :class => 'navbar-link'  %></li>
-      <li><%= link_to 'Edit link', edit_link_path(id:@link.id), :class => 'navbar-link'  %></li>
-      <% end %>
-      <li><%= link_to 'New link', new_link_path, :class => 'navbar-link'  %></li>   
+      <%# User dropdown logged in %>
+      <div class="dropdown">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-person-circle"> <%= current_user.email %></i>
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        <li><%= link_to 'Edit Profile', edit_user_registration_path, :class => 'dropdown-item'  %></li>
+        <li><%= link_to "Logout", destroy_user_session_path, data: { turbo_method: :delete }, :class => 'dropdown-item' %>
+          </li>
+      </ul>
+    </div>
     <% else %>
-      <li><%= link_to 'Sign In', new_user_session_path, :class => 'navbar-link'  %></li>
-      <li><%= link_to 'Sign Up', new_user_registration_path, :class => 'navbar-link'  %></li>
-    <% end %>
-    <li><%= link_to 'About', about_path, :class => 'navbar-link'  %></li>
+    <div class="d-flex">
+      <li><%= link_to 'Sign In', new_user_session_path, :class => 'navbar-link btn btn-primary mx-3'  %></li>
+      <li><%= link_to 'Sign Up', new_user_registration_path, :class => 'navbar-link btn btn-secondary'  %></li>
+    </div>
+    <% end %> 
   </ul>
 </nav>

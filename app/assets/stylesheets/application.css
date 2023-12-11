@@ -10,8 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
 * {
@@ -33,19 +31,57 @@ body {
 
 nav {
 	background-color: #333;
-	padding: 1rem;
 }
 
-a {
+.navbar-link {
 	text-decoration: none;
 	color: #fff;
 	font-size: 1rem;
+}
+
+.navbar-link:hover {
+	color: #ccc;
 }
 
 nav ul {
 	list-style: none;
 	display: flex;
 	justify-content: space-between;
-	width: 70%;
+	align-items: center;
+	width: 40%;
+	min-height: 10vh;
 	margin: auto;
+}
+
+/* Font Styles */
+.logo {
+	font-weight: bold;
+	font-size: 5rem; /* Adjust font size as needed */
+	color: #333; /* Define your preferred text color */
+}
+
+/* Individual Styling for Chq and .to */
+.logo-text-left {
+	/* Add different colors or styles for Chq and .to if needed */
+	color: #183b27; /* Green color example */
+}
+
+.logo-dot {
+	color: #4e4ef1; /* Red color example */
+	font-size: 5rem; /* Adjust dot size */
+	vertical-align: middle;
+	margin: 0 5px; /* Adjust spacing around dot */
+}
+/* Individual Styling for Chq and .to */
+.logo-text-right {
+	/* Add different colors or styles for Chq and .to if needed */
+	color: #bababb; /* Green color example */
+}
+
+main {
+	min-height: 60vh;
+}
+
+.field {
+	margin: 1rem 0;
 }
