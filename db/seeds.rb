@@ -5,15 +5,14 @@
 user1 =  User.create(username: 'senras1', email: 'mailuser1@gmail.com', password: '123456')
 user2 = User.create(username: 'senras2', email: 'mailuser2@gmail.com', password: '123456')
 
+
 # Links
 link1 = Link.create(
  name: 'Informática',
  slug: SecureRandom.hex(3),
  url: 'https://www.info.unlp.edu.ar/',
  user_id: user1.id,
- link_category: 'regular',
- expiration_date: '',
- password: ''
+ link_type: 'regular',
 )
 
 link2 = Link.create(
@@ -21,8 +20,7 @@ link2 = Link.create(
    slug: SecureRandom.hex(3),
    url: 'https://www.jursoc.unlp.edu.ar/',
    user_id: user1.id,
-   link_category: 'private_link',
-   expiration_date: '',
+   link_type: 'private',
    password: '123'
  )
 
@@ -31,9 +29,8 @@ link3 = Link.create(
    slug: SecureRandom.hex(3),
    url: 'https://www.med.unlp.edu.ar/',
    user_id: user1.id,
-   link_category: 'temporary',
+   link_type: 'temporary',
    expiration_date: Time.now + 1.day,
-   password: ''
  )
 
 link4 = Link.create(
@@ -41,9 +38,8 @@ link4 = Link.create(
    slug: SecureRandom.hex(3),
    url: 'https://ing.unlp.edu.ar/',
    user_id: user1.id,
-   link_category: 'ephemeral',
+   link_type: 'ephemeral',
    expiration_date: '',
-   password: ''
  )
 
  link5 = Link.create(
@@ -51,8 +47,7 @@ link4 = Link.create(
    slug: SecureRandom.hex(3),
    url: 'https://fba.unlp.edu.ar/',
    user_id: user1.id,
-   link_category: 'regular',
-   password: ''
+   link_type: 'regular',
  )
 
  link6 = Link.create(
@@ -60,9 +55,8 @@ link4 = Link.create(
     slug: SecureRandom.hex(3),
     url: 'https://www.exactas.unlp.edu.ar/',
     user_id: user1.id,
-    link_category: 'temporary',
+    link_type: 'temporary',
     expiration_date: Time.now - 1.day,
-    password: ''
 )
  
 

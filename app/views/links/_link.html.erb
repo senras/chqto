@@ -33,10 +33,10 @@
   <% end %>
   <p>
     <strong>Created:</strong>
-    <%= link.created_at.to_time.in_time_zone('America/Argentina/Buenos_Aires').strftime("%H:%M:%S %Y-%m-%d") %>
+    <%= link.created_at.to_time.in_time_zone('America/Argentina/Buenos_Aires').strftime("%H:%M:%S -- %Y-%m-%d") %>
   </p>
     <p>
     <strong>Last Update:</strong>
-    <%= link.updated_at.to_time.in_time_zone('America/Argentina/Buenos_Aires').strftime("%H:%M:%S %Y-%m-%d") %>
+    <%= link.updated_at.to_time.in_time_zone('America/Argentina/Buenos_Aires').strftime("%H:%M:%S -- %Y-%m-%d") %>
   </p>
 </div>
