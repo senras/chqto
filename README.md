@@ -26,25 +26,19 @@ Queda el server desplegado en: http://127.0.0.1:3000/
 
 
 ## Librerías y gemas utilizadas:
- - SweetAlert2      para flash messages (cdn)
- - Bootstrap 5      para estilos
+ - SweetAlert2      para flash messages (cdn).
+ - Bootstrap 5      para estilos.
  - Bootstrap Icons  
- - sassc-rails      para Sass en Rails (dependencia  bootstrap)
- - Will_paginate    para paginado de listas de elementos
- - groupdate        para agrupar por dates
- - ransack          para búsqueda
+ - sassc-rails      para Sass en Rails (dependencia  bootstrap).
+ - Will_paginate    para paginado de listas de elementos.
+ - groupdate        para agrupar por dates.
+ - ransack          para búsqueda.
 
- - attr_encrypted   para autenticación
- - Cancancan        para autorización
- - Bcrypt           para cifrado de contraseñas
+ - attr_encrypted   para autenticación.
+ - Cancancan        para autorización.
+ - Bcrypt           para cifrado de contraseñas.
 
 
 ## Pendientes:
 
  - Dropdown de Profile no pude hacerlo funcionar. Problemas con Bootstrap + Turbo por lo que averigué.
-
- - Corregir vista de Link.
-
- - Vistas de estadísticas.
-
- - Controladores de estadísticas.
