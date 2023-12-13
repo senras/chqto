@@ -1,27 +1,42 @@
 <div id="<%= dom_id link %>">
-  <p>
-    <strong>Name:</strong>
-    <%= link.name %>
+
+  <% if link.name.present? %>
+    <h3><%= link.name %></h3>
+  <% end %>
+
+  <p class="mt-4">
+    <strong>Link type:</strong>
+    <%= link.link_type %>
   </p>
 
   <p>
-    <strong>Slug:</strong>
-    <%= link.slug %>
+    <strong>Original url:</strong>
+    <a href=""><%= link.url %></a>
   </p>
-
   <p>
-    <strong>Expiration date:</strong>
-    <%= link.expiration_date %>
+    <strong>Shortened URL:</strong>
+    <%= link_to redirect_original_url_url(link.slug) ,redirect_original_url_url(link.slug)%>
   </p>
-
+  <%# If it's a temporary link, it will expire on link.expiration_date %>
+  <% if link.link_type == "temporary" %>
+    <p>
+      <strong>Expiration date:</strong>
+      <%= link.expiration_date %>
+    </p>
+  <% else %>
+      <% if link.link_type == "ephemeral" %>
+        <p>
+          <strong>Accessed: </strong>
+            <%= link.accessed %>
+        </p>
+    <% end %>
+  <% end %>
   <p>
-    <strong>Password:</strong>
-    <%= link.password %>
+    <strong>Created:</strong>
+    <%= link.created_at.to_time.in_time_zone('America/Argentina/Buenos_Aires').strftime("%H:%M:%S %Y-%m-%d") %>
   </p>
-
-  <p>
-    <strong>Accessed:</strong>
-    <%= link.accessed %>
+    <p>
+    <strong>Last Update:</strong>
+    <%= link.updated_at.to_time.in_time_zone('America/Argentina/Buenos_Aires').strftime("%H:%M:%S %Y-%m-%d") %>
   </p>
-
 </div>

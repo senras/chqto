@@ -1,9 +1,21 @@
-<%= render @link %>
 
-<div>
-  <%= link_to "Edit this link", edit_link_path(@link) %> |
-  <%= link_to "Back to links", links_path %>
-
-  <%= button_to "Destroy this link", @link, method: :delete %>
+<div class="container w-50">
+  <%= render @link %>
+  <div class="d-flex mt-4">
+   <%= link_to visit_counter_chart_link_path(@link), class: "btn btn-success" do %>
+      Daily visits counter
+    <% end %> 
+    <%= link_to visit_detail_link_path(@link), class: "btn btn-primary text-light mx-2" do %>
+      Daily visits detail
+    <% end %>
+    <%# Edit button %>
+    <%= button_to edit_link_path(@link), method: :get, class: "btn btn-secondary" do %>
+      <i class="bi bi-pen"></i> Edit
+    <% end %>
+    <%# Delete button %>
+    <%= button_to @link, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger mx-2" do %>
+      <i class="bi bi-trash"></i>
+    <% end %>
+  </div>
 </div>
 

@@ -1,0 +1,26 @@
+<div class="container">
+  <h1 class="mb-4">Daily visits report</h1>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr class="table-primary">
+        <th scope="col">Date</th>
+        <th scope="col">Visits count (per day)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @visit_counter_per_day.each do |day, count| %>
+          <tr>
+            <td><%= day %></td>
+            <td><%= count %></td>
+          </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
